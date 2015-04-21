@@ -1,17 +1,7 @@
-import lib.mylib as mylib
-import sys
-path = sys.path[0]
-
-APP_KEY = '' 
-APP_SECRET = '' 
-CALLBACK_URL = ''
-
-LOGPATH = path + "/log/dota.log"
-DATAPATH = path + "/data/dota.txt"
+import lib.publisher
+import os
 USERNAME = ''
 PASSWORD = ''
-INTERVAL = 3600
-AUTHORS = [["","",""]
-          ]
-
-mylib.publish_youku_to_weibo()
+data_file = os.getcwd() + "/config/dota.ini"
+log_file = os.getcwd() + "/logs/dota.txt"
+lib.publisher.publish_main(data_file,log_file)

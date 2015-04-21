@@ -19,7 +19,8 @@ class LibHTMLParser(HTMLParser):
             self.flag = 0
             self.dic['title']=attrs[0][1]
             self.dic['link']=attrs[2][1]
-            self.links.append(self.dic)
+            if self.dic.has_key("time") and self.dic.has_key("title") and self.dic.has_key("link"):
+                self.links.append(self.dic)
             self.dic = {}
 
 def get_video_from_lib(url):
